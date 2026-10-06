@@ -18,6 +18,7 @@ Thumbpad has no servers of its own. All control happens between your phone and y
 
 - **Pairing credentials**: a cryptographic key pair and your PC's identity are generated and stored **only on your phone**, in the Android Keystore / encrypted storage. They are used solely to authenticate to your own PC and never leave the device otherwise.
 - **Input and media commands**: mouse movement, keystrokes, media controls, and volume changes are sent **directly to your paired PC** over an encrypted (TLS) connection on your local network. They are not recorded and are not sent anywhere else. We, the developer, never receive them.
+- **Screen view (optional, off by default)**: when you turn it on, your PC streams its screen (or the area around the cursor) **directly to your phone** on your local network, end-to-end encrypted with a key created for each session. The picture is shown live and is never recorded, stored, or sent to us, to Google, or to any server. Usage statistics never include anything from your screen.
 
 ## Advertising
 
