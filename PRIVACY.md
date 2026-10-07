@@ -22,7 +22,7 @@ Thumbpad has no servers of its own. All control happens between your phone and y
 
 ## Advertising
 
-Thumbpad displays ads provided by **Google AdMob**: one full-screen ad when you open the app (shown at an idle moment, never over a gesture in progress), and native ads styled to match the app on the Keyboard and Media screens. Ads are never placed over the trackpad.
+Thumbpad displays ads provided by **Google AdMob**: one full-screen ad when you open the app (shown at an idle moment, never over a gesture in progress); native ads styled to match the app on the Keyboard and Media screens, and in the screen view preview while you are idle; and an optional video ad that you can choose to watch to unlock full screen view for 15 minutes. Ads are never placed over the trackpad.
 
 - To provide and measure ads, Google may collect and process information such as your device's **advertising ID**, IP address, approximate (coarse) location derived from the IP address, device information, and ad interactions. For this, Google acts as an independent controller of that data.
 - **Consent**: where required (for example in the EEA, the UK, and Switzerland), the app shows a consent form before serving personalized ads, using Google's User Messaging Platform. You can choose non-personalized ads.
