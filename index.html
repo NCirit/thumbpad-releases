@@ -113,6 +113,25 @@
   .get-app .text span { font-size: 14px; color: var(--muted); }
   .get-app .badge { flex: 0 0 auto; }
   .get-app .badge img { height: 56px; display: block; margin: -8px -10px; }
+  .shot { display: block; max-width: 100%; height: auto; margin: 12px 0 4px; border-radius: 8px; }
+  .shot.narrow { max-width: 72%; }
+  /* Two screenshots of one dialog, crossfading: first click, then second. */
+  .loop { position: relative; margin: 12px 0 4px; }
+  .loop .frame { position: relative; }
+  .loop .shot { margin: 0; }
+  .loop .frame + .frame { position: absolute; inset: 0; animation: swap 3.6s infinite; }
+  @keyframes swap { 0%, 42% { opacity: 0; } 50%, 92% { opacity: 1; } 100% { opacity: 0; } }
+  /* Click order within the sequence, over the window chrome corner. */
+  .loop .n {
+    position: absolute; top: 6px; right: 6px;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--accent); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 600;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .loop .frame + .frame { position: relative; animation: none; margin-top: 8px; }
+  }
   footer { color: var(--muted); font-size: 13px; margin-top: 56px; border-top: 1px solid var(--border); padding-top: 20px; }
   footer a { color: var(--muted); }
 </style>
@@ -127,17 +146,39 @@
   </a>
   <p class="req">Windows 10 or 11 · free · installs in seconds</p>
 
-  <p class="note">
-    <strong>Heads up:</strong> the installer isn't code-signed yet, so Windows
-    may show a blue <em>"Windows protected your PC"</em> box. Click
-    <strong>More info</strong>, then <strong>Run anyway</strong> to continue.
-  </p>
-
   <h2>Get set up</h2>
   <ol>
-    <li>Run <strong>ThumbpadSetup.exe</strong>. It installs Thumbpad and (if you keep the option) starts it with Windows. <span>A pairing window with a QR code opens automatically.</span></li>
+    <li>Run <strong>ThumbpadSetup.exe</strong>. <span>It isn't code-signed yet, so Windows may show this blue box: click</span> <strong>More info</strong>, <span>then</span> <strong>Run anyway</strong>.
+      <div class="loop">
+        <div class="frame">
+          <img class="shot" src="assets/guide/smartscreen_1.webp" width="665" height="622" alt="Windows protected your PC box with More info highlighted">
+          <span class="n">1</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="assets/guide/smartscreen_2.webp" width="665" height="622" alt="The same box with Run anyway highlighted">
+          <span class="n">2</span>
+        </div>
+      </div>
+    </li>
+    <li>Click <strong>Next</strong>, then <strong>Install</strong>. <span>If Windows asks to allow changes, click Yes so Thumbpad starts with Windows. A pairing window with a QR code opens when it's done.</span>
+      <div class="loop">
+        <div class="frame">
+          <img class="shot" src="assets/guide/install_1.webp" width="798" height="615" alt="Setup options page with Next highlighted">
+          <span class="n">1</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="assets/guide/install_2.webp" width="798" height="615" alt="Ready to Install page with Install highlighted">
+          <span class="n">2</span>
+        </div>
+      </div>
+    </li>
+    <li>When Windows asks about network access, click <strong>Allow</strong>. <span>Your phone reaches the PC over your local Wi-Fi.</span>
+      <img class="shot narrow" src="assets/guide/firewall.webp" width="518" height="519" alt="Windows Security network access prompt with Allow highlighted">
+    </li>
     <li>Install the <a href="https://play.google.com/store/apps/details?id=com.thumbpad.app" target="_blank" rel="noopener noreferrer"><strong>Thumbpad</strong> app</a> from Google Play on your Android phone. <span>Keep the phone on the same Wi-Fi network as the PC.</span></li>
-    <li>In the app, tap <strong>Pair a PC</strong> and scan the QR code on your PC. <span>That's the only time you'll need to pair.</span></li>
+    <li>In the app, tap <strong>Pair a PC</strong> and scan the QR code on your PC. <span>That's the only time you'll need to pair.</span>
+      <img class="shot narrow" src="assets/guide/pair.webp" width="550" height="688" alt="Thumbpad pairing window showing a QR code">
+    </li>
   </ol>
 
   <h2>Get the phone app</h2>
