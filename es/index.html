@@ -173,6 +173,14 @@
   .loop .shot { margin: 0; }
   .loop .frame + .frame { position: absolute; inset: 0; animation: swap 3.6s infinite; }
   @keyframes swap { 0%, 42% { opacity: 0; } 50%, 92% { opacity: 1; } 100% { opacity: 0; } }
+  /* Four-step sequence (tray: hidden icons, Thumbpad icon, Pair device, QR),
+     1.8 s per frame like the app's setup guide. Each frame owns a quarter of
+     the cycle and crossfades into the next. */
+  .loop.four .frame { animation: four 7.2s infinite backwards; }
+  .loop.four .frame:nth-child(2) { animation-delay: 1.8s; }
+  .loop.four .frame:nth-child(3) { animation-delay: 3.6s; }
+  .loop.four .frame:nth-child(4) { animation-delay: 5.4s; }
+  @keyframes four { 0% { opacity: 0; } 5%, 25% { opacity: 1; } 30%, 100% { opacity: 0; } }
   /* Click order within the sequence, over the window chrome corner. The
      screenshots are left-to-right in every language, so this stays physical. */
   .loop .n {
@@ -184,6 +192,7 @@
   }
   @media (prefers-reduced-motion: reduce) {
     .loop .frame + .frame { position: relative; animation: none; margin-top: 8px; }
+    .loop.four .frame { animation: none; }
   }
   .video {
     aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden;
@@ -264,8 +273,25 @@
       <img class="shot narrow" src="../assets/guide/firewall.webp" width="518" height="519" alt="Aviso de acceso a la red de Seguridad de Windows con «Permitir» resaltado">
     </li>
     <li>Instala la <a href="https://play.google.com/store/apps/details?id=com.thumbpad.app&amp;hl=es" target="_blank" rel="noopener noreferrer">app <strong>Thumbpad</strong></a> desde Google Play en tu teléfono Android. <span>El teléfono y el PC tienen que estar en la misma red Wi-Fi.</span></li>
-    <li>En la app, toca <strong>Emparejar un PC</strong> y escanea el código QR que aparece en tu PC. <span>Solo tendrás que emparejarlos una vez.</span>
-      <img class="shot narrow" src="../assets/guide/pair.webp" width="550" height="688" alt="Ventana de emparejamiento de Thumbpad con un código QR">
+    <li>En tu PC, abre los iconos ocultos <strong>(^)</strong> junto al reloj, haz clic derecho en el icono de Thumbpad y elige <strong>Emparejar dispositivo…</strong>. <span>Luego, en la app, toca</span> <strong>Emparejar un PC</strong> <span>y escanea el código QR. Solo tendrás que emparejarlos una vez.</span>
+      <div class="loop four">
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_1.webp" width="540" height="380" alt="Barra de tareas con la flecha de iconos ocultos (^) resaltada">
+          <span class="n">1</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_2.webp" width="540" height="380" alt="Iconos ocultos abiertos con el icono de Thumbpad resaltado">
+          <span class="n">2</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_3.webp" width="540" height="380" alt="Menú de Thumbpad con «Emparejar dispositivo…» resaltado">
+          <span class="n">3</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_4.webp" width="540" height="380" alt="Ventana de emparejamiento de Thumbpad con un código QR">
+          <span class="n">4</span>
+        </div>
+      </div>
     </li>
   </ol>
 

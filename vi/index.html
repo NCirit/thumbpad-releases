@@ -173,6 +173,14 @@
   .loop .shot { margin: 0; }
   .loop .frame + .frame { position: absolute; inset: 0; animation: swap 3.6s infinite; }
   @keyframes swap { 0%, 42% { opacity: 0; } 50%, 92% { opacity: 1; } 100% { opacity: 0; } }
+  /* Four-step sequence (tray: hidden icons, Thumbpad icon, Pair device, QR),
+     1.8 s per frame like the app's setup guide. Each frame owns a quarter of
+     the cycle and crossfades into the next. */
+  .loop.four .frame { animation: four 7.2s infinite backwards; }
+  .loop.four .frame:nth-child(2) { animation-delay: 1.8s; }
+  .loop.four .frame:nth-child(3) { animation-delay: 3.6s; }
+  .loop.four .frame:nth-child(4) { animation-delay: 5.4s; }
+  @keyframes four { 0% { opacity: 0; } 5%, 25% { opacity: 1; } 30%, 100% { opacity: 0; } }
   /* Click order within the sequence, over the window chrome corner. The
      screenshots are left-to-right in every language, so this stays physical. */
   .loop .n {
@@ -184,6 +192,7 @@
   }
   @media (prefers-reduced-motion: reduce) {
     .loop .frame + .frame { position: relative; animation: none; margin-top: 8px; }
+    .loop.four .frame { animation: none; }
   }
   .video {
     aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden;
@@ -264,8 +273,25 @@
       <img class="shot narrow" src="../assets/guide/firewall.webp" width="518" height="519" alt="Hộp thoại truy cập mạng của Bảo mật Windows, nút “Cho phép” được tô sáng">
     </li>
     <li>Cài <a href="https://play.google.com/store/apps/details?id=com.thumbpad.app&amp;hl=vi" target="_blank" rel="noopener noreferrer">ứng dụng <strong>Thumbpad</strong></a> từ Google Play trên điện thoại Android. <span>Điện thoại và PC cần dùng chung một mạng Wi-Fi.</span></li>
-    <li>Trong ứng dụng, chạm <strong>Ghép nối PC</strong> rồi quét mã QR trên PC. <span>Bạn chỉ cần ghép nối một lần.</span>
-      <img class="shot narrow" src="../assets/guide/pair.webp" width="550" height="688" alt="Cửa sổ ghép nối Thumbpad hiển thị mã QR">
+    <li>Trên PC, mở các biểu tượng ẩn <strong>(^)</strong> gần đồng hồ, nhấp chuột phải vào biểu tượng Thumbpad và chọn <strong>Ghép nối thiết bị…</strong>. <span>Sau đó, trong ứng dụng, chạm</span> <strong>Ghép nối PC</strong> <span>rồi quét mã QR. Bạn chỉ cần ghép nối một lần.</span>
+      <div class="loop four">
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_1.webp" width="540" height="380" alt="Thanh tác vụ, mũi tên biểu tượng ẩn (^) được tô sáng">
+          <span class="n">1</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_2.webp" width="540" height="380" alt="Các biểu tượng ẩn đang mở, biểu tượng Thumbpad được tô sáng">
+          <span class="n">2</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_3.webp" width="540" height="380" alt="Menu Thumbpad, mục “Ghép nối thiết bị…” được tô sáng">
+          <span class="n">3</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_4.webp" width="540" height="380" alt="Cửa sổ ghép nối Thumbpad hiển thị mã QR">
+          <span class="n">4</span>
+        </div>
+      </div>
     </li>
   </ol>
 

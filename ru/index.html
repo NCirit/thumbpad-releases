@@ -173,6 +173,14 @@
   .loop .shot { margin: 0; }
   .loop .frame + .frame { position: absolute; inset: 0; animation: swap 3.6s infinite; }
   @keyframes swap { 0%, 42% { opacity: 0; } 50%, 92% { opacity: 1; } 100% { opacity: 0; } }
+  /* Four-step sequence (tray: hidden icons, Thumbpad icon, Pair device, QR),
+     1.8 s per frame like the app's setup guide. Each frame owns a quarter of
+     the cycle and crossfades into the next. */
+  .loop.four .frame { animation: four 7.2s infinite backwards; }
+  .loop.four .frame:nth-child(2) { animation-delay: 1.8s; }
+  .loop.four .frame:nth-child(3) { animation-delay: 3.6s; }
+  .loop.four .frame:nth-child(4) { animation-delay: 5.4s; }
+  @keyframes four { 0% { opacity: 0; } 5%, 25% { opacity: 1; } 30%, 100% { opacity: 0; } }
   /* Click order within the sequence, over the window chrome corner. The
      screenshots are left-to-right in every language, so this stays physical. */
   .loop .n {
@@ -184,6 +192,7 @@
   }
   @media (prefers-reduced-motion: reduce) {
     .loop .frame + .frame { position: relative; animation: none; margin-top: 8px; }
+    .loop.four .frame { animation: none; }
   }
   .video {
     aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden;
@@ -264,8 +273,25 @@
       <img class="shot narrow" src="../assets/guide/firewall.webp" width="518" height="519" alt="Запрос доступа к сети от «Безопасности Windows», выделена кнопка «Разрешить»">
     </li>
     <li>Установите <a href="https://play.google.com/store/apps/details?id=com.thumbpad.app&amp;hl=ru" target="_blank" rel="noopener noreferrer">приложение <strong>Thumbpad</strong></a> из Google Play на Android-телефон. <span>Телефон и ПК должны быть подключены к одной сети Wi-Fi.</span></li>
-    <li>В приложении нажмите <strong>Сопрячь ПК</strong> и отсканируйте QR-код на экране компьютера. <span>Это нужно сделать всего один раз.</span>
-      <img class="shot narrow" src="../assets/guide/pair.webp" width="550" height="688" alt="Окно сопряжения Thumbpad с QR-кодом">
+    <li>На ПК откройте скрытые значки <strong>(^)</strong> рядом с часами, щёлкните правой кнопкой мыши по значку Thumbpad и выберите <strong>Сопрячь устройство…</strong>. <span>Затем в приложении нажмите</span> <strong>Сопрячь ПК</strong> <span>и отсканируйте QR-код. Это нужно сделать всего один раз.</span>
+      <div class="loop four">
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_1.webp" width="540" height="380" alt="Панель задач, выделена стрелка скрытых значков (^)">
+          <span class="n">1</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_2.webp" width="540" height="380" alt="Скрытые значки открыты, выделен значок Thumbpad">
+          <span class="n">2</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_3.webp" width="540" height="380" alt="Меню Thumbpad, выделен пункт «Сопрячь устройство…»">
+          <span class="n">3</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_4.webp" width="540" height="380" alt="Окно сопряжения Thumbpad с QR-кодом">
+          <span class="n">4</span>
+        </div>
+      </div>
     </li>
   </ol>
 

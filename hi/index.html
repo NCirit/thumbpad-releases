@@ -173,6 +173,14 @@
   .loop .shot { margin: 0; }
   .loop .frame + .frame { position: absolute; inset: 0; animation: swap 3.6s infinite; }
   @keyframes swap { 0%, 42% { opacity: 0; } 50%, 92% { opacity: 1; } 100% { opacity: 0; } }
+  /* Four-step sequence (tray: hidden icons, Thumbpad icon, Pair device, QR),
+     1.8 s per frame like the app's setup guide. Each frame owns a quarter of
+     the cycle and crossfades into the next. */
+  .loop.four .frame { animation: four 7.2s infinite backwards; }
+  .loop.four .frame:nth-child(2) { animation-delay: 1.8s; }
+  .loop.four .frame:nth-child(3) { animation-delay: 3.6s; }
+  .loop.four .frame:nth-child(4) { animation-delay: 5.4s; }
+  @keyframes four { 0% { opacity: 0; } 5%, 25% { opacity: 1; } 30%, 100% { opacity: 0; } }
   /* Click order within the sequence, over the window chrome corner. The
      screenshots are left-to-right in every language, so this stays physical. */
   .loop .n {
@@ -184,6 +192,7 @@
   }
   @media (prefers-reduced-motion: reduce) {
     .loop .frame + .frame { position: relative; animation: none; margin-top: 8px; }
+    .loop.four .frame { animation: none; }
   }
   .video {
     aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden;
@@ -264,8 +273,25 @@
       <img class="shot narrow" src="../assets/guide/firewall.webp" width="518" height="519" alt="Windows सुरक्षा का नेटवर्क ऐक्सेस प्रॉम्प्ट, जिसमें “अनुमति दें” हाइलाइट है">
     </li>
     <li>अपने Android फ़ोन पर Google Play से <a href="https://play.google.com/store/apps/details?id=com.thumbpad.app&amp;hl=hi" target="_blank" rel="noopener noreferrer"><strong>Thumbpad</strong> ऐप</a> इंस्टॉल करें। <span>फ़ोन और PC एक ही Wi-Fi नेटवर्क पर होने चाहिए।</span></li>
-    <li>ऐप में <strong>PC पेयर करें</strong> पर टैप करें और अपने PC पर दिख रहा QR कोड स्कैन करें। <span>पेयर सिर्फ़ एक बार करना होता है।</span>
-      <img class="shot narrow" src="../assets/guide/pair.webp" width="550" height="688" alt="QR कोड दिखाती Thumbpad पेयरिंग विंडो">
+    <li>अपने PC पर घड़ी के पास छिपे आइकन <strong>(^)</strong> खोलें, Thumbpad आइकन पर राइट-क्लिक करें और <strong>डिवाइस पेयर करें…</strong> चुनें। <span>फिर ऐप में</span> <strong>PC पेयर करें</strong> <span>पर टैप करें और QR कोड स्कैन करें। पेयर सिर्फ़ एक बार करना होता है।</span>
+      <div class="loop four">
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_1.webp" width="540" height="380" alt="टास्कबार, जिसमें छिपे आइकन वाला तीर (^) हाइलाइट है">
+          <span class="n">1</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_2.webp" width="540" height="380" alt="छिपे आइकन खुले हैं, जिसमें Thumbpad आइकन हाइलाइट है">
+          <span class="n">2</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_3.webp" width="540" height="380" alt="Thumbpad मेन्यू, जिसमें “डिवाइस पेयर करें…” हाइलाइट है">
+          <span class="n">3</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_4.webp" width="540" height="380" alt="QR कोड दिखाती Thumbpad पेयरिंग विंडो">
+          <span class="n">4</span>
+        </div>
+      </div>
     </li>
   </ol>
 

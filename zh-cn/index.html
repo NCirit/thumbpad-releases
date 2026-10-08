@@ -173,6 +173,14 @@
   .loop .shot { margin: 0; }
   .loop .frame + .frame { position: absolute; inset: 0; animation: swap 3.6s infinite; }
   @keyframes swap { 0%, 42% { opacity: 0; } 50%, 92% { opacity: 1; } 100% { opacity: 0; } }
+  /* Four-step sequence (tray: hidden icons, Thumbpad icon, Pair device, QR),
+     1.8 s per frame like the app's setup guide. Each frame owns a quarter of
+     the cycle and crossfades into the next. */
+  .loop.four .frame { animation: four 7.2s infinite backwards; }
+  .loop.four .frame:nth-child(2) { animation-delay: 1.8s; }
+  .loop.four .frame:nth-child(3) { animation-delay: 3.6s; }
+  .loop.four .frame:nth-child(4) { animation-delay: 5.4s; }
+  @keyframes four { 0% { opacity: 0; } 5%, 25% { opacity: 1; } 30%, 100% { opacity: 0; } }
   /* Click order within the sequence, over the window chrome corner. The
      screenshots are left-to-right in every language, so this stays physical. */
   .loop .n {
@@ -184,6 +192,7 @@
   }
   @media (prefers-reduced-motion: reduce) {
     .loop .frame + .frame { position: relative; animation: none; margin-top: 8px; }
+    .loop.four .frame { animation: none; }
   }
   .video {
     aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden;
@@ -264,8 +273,25 @@
       <img class="shot narrow" src="../assets/guide/firewall.webp" width="518" height="519" alt="Windows 安全中心的网络访问提示，“允许”已突出显示">
     </li>
     <li>在 Android 手机上从 Google Play 安装 <a href="https://play.google.com/store/apps/details?id=com.thumbpad.app&amp;hl=zh-CN" target="_blank" rel="noopener noreferrer"><strong>Thumbpad</strong> 应用</a>。<span>手机和电脑需要连接同一个 Wi-Fi 网络。</span></li>
-    <li>在应用中点按<strong>配对电脑</strong>，然后扫描电脑上的二维码。<span>只需配对一次。</span>
-      <img class="shot narrow" src="../assets/guide/pair.webp" width="550" height="688" alt="显示二维码的 Thumbpad 配对窗口">
+    <li>在电脑上，打开时钟附近的隐藏图标<strong>（^）</strong>，右键单击 Thumbpad 图标并选择<strong>配对设备…</strong>。<span>然后在应用中点按</span><strong>配对电脑</strong><span>，扫描二维码。只需配对一次。</span>
+      <div class="loop four">
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_1.webp" width="540" height="380" alt="任务栏，隐藏图标箭头（^）已突出显示">
+          <span class="n">1</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_2.webp" width="540" height="380" alt="隐藏图标已展开，Thumbpad 图标已突出显示">
+          <span class="n">2</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_3.webp" width="540" height="380" alt="Thumbpad 菜单，“配对设备…”已突出显示">
+          <span class="n">3</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_4.webp" width="540" height="380" alt="显示二维码的 Thumbpad 配对窗口">
+          <span class="n">4</span>
+        </div>
+      </div>
     </li>
   </ol>
 

@@ -173,6 +173,14 @@
   .loop .shot { margin: 0; }
   .loop .frame + .frame { position: absolute; inset: 0; animation: swap 3.6s infinite; }
   @keyframes swap { 0%, 42% { opacity: 0; } 50%, 92% { opacity: 1; } 100% { opacity: 0; } }
+  /* Four-step sequence (tray: hidden icons, Thumbpad icon, Pair device, QR),
+     1.8 s per frame like the app's setup guide. Each frame owns a quarter of
+     the cycle and crossfades into the next. */
+  .loop.four .frame { animation: four 7.2s infinite backwards; }
+  .loop.four .frame:nth-child(2) { animation-delay: 1.8s; }
+  .loop.four .frame:nth-child(3) { animation-delay: 3.6s; }
+  .loop.four .frame:nth-child(4) { animation-delay: 5.4s; }
+  @keyframes four { 0% { opacity: 0; } 5%, 25% { opacity: 1; } 30%, 100% { opacity: 0; } }
   /* Click order within the sequence, over the window chrome corner. The
      screenshots are left-to-right in every language, so this stays physical. */
   .loop .n {
@@ -184,6 +192,7 @@
   }
   @media (prefers-reduced-motion: reduce) {
     .loop .frame + .frame { position: relative; animation: none; margin-top: 8px; }
+    .loop.four .frame { animation: none; }
   }
   .video {
     aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden;
@@ -264,8 +273,25 @@
       <img class="shot narrow" src="../assets/guide/firewall.webp" width="518" height="519" alt="Aviso de acesso à rede da Segurança do Windows com “Permitir” destacado">
     </li>
     <li>Instale o <a href="https://play.google.com/store/apps/details?id=com.thumbpad.app&amp;hl=pt-BR" target="_blank" rel="noopener noreferrer">app <strong>Thumbpad</strong></a> pelo Google Play no seu celular Android. <span>O celular e o PC precisam estar na mesma rede Wi-Fi.</span></li>
-    <li>No app, toque em <strong>Parear um PC</strong> e escaneie o código QR no seu PC. <span>Você só precisa parear uma vez.</span>
-      <img class="shot narrow" src="../assets/guide/pair.webp" width="550" height="688" alt="Janela de pareamento do Thumbpad mostrando um código QR">
+    <li>No seu PC, abra os ícones ocultos <strong>(^)</strong> perto do relógio, clique com o botão direito no ícone do Thumbpad e escolha <strong>Parear dispositivo…</strong>. <span>Depois, no app, toque em</span> <strong>Parear um PC</strong> <span>e escaneie o código QR. Você só precisa parear uma vez.</span>
+      <div class="loop four">
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_1.webp" width="540" height="380" alt="Barra de tarefas com a seta dos ícones ocultos (^) destacada">
+          <span class="n">1</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_2.webp" width="540" height="380" alt="Ícones ocultos abertos com o ícone do Thumbpad destacado">
+          <span class="n">2</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_3.webp" width="540" height="380" alt="Menu do Thumbpad com “Parear dispositivo…” destacado">
+          <span class="n">3</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_4.webp" width="540" height="380" alt="Janela de pareamento do Thumbpad mostrando um código QR">
+          <span class="n">4</span>
+        </div>
+      </div>
     </li>
   </ol>
 

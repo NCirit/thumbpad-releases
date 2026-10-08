@@ -173,6 +173,14 @@
   .loop .shot { margin: 0; }
   .loop .frame + .frame { position: absolute; inset: 0; animation: swap 3.6s infinite; }
   @keyframes swap { 0%, 42% { opacity: 0; } 50%, 92% { opacity: 1; } 100% { opacity: 0; } }
+  /* Four-step sequence (tray: hidden icons, Thumbpad icon, Pair device, QR),
+     1.8 s per frame like the app's setup guide. Each frame owns a quarter of
+     the cycle and crossfades into the next. */
+  .loop.four .frame { animation: four 7.2s infinite backwards; }
+  .loop.four .frame:nth-child(2) { animation-delay: 1.8s; }
+  .loop.four .frame:nth-child(3) { animation-delay: 3.6s; }
+  .loop.four .frame:nth-child(4) { animation-delay: 5.4s; }
+  @keyframes four { 0% { opacity: 0; } 5%, 25% { opacity: 1; } 30%, 100% { opacity: 0; } }
   /* Click order within the sequence, over the window chrome corner. The
      screenshots are left-to-right in every language, so this stays physical. */
   .loop .n {
@@ -184,6 +192,7 @@
   }
   @media (prefers-reduced-motion: reduce) {
     .loop .frame + .frame { position: relative; animation: none; margin-top: 8px; }
+    .loop.four .frame { animation: none; }
   }
   .video {
     aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden;
@@ -264,8 +273,25 @@
       <img class="shot narrow" src="../assets/guide/firewall.webp" width="518" height="519" alt="Permintaan akses jaringan dari Keamanan Windows dengan “Izinkan” disorot">
     </li>
     <li>Pasang <a href="https://play.google.com/store/apps/details?id=com.thumbpad.app&amp;hl=id" target="_blank" rel="noopener noreferrer">aplikasi <strong>Thumbpad</strong></a> dari Google Play di ponsel Android Anda. <span>Pastikan ponsel dan PC terhubung ke jaringan Wi-Fi yang sama.</span></li>
-    <li>Di aplikasi, ketuk <strong>Pasangkan PC</strong> lalu pindai kode QR di PC Anda. <span>Anda hanya perlu melakukannya sekali.</span>
-      <img class="shot narrow" src="../assets/guide/pair.webp" width="550" height="688" alt="Jendela Thumbpad untuk memasangkan ponsel, menampilkan kode QR">
+    <li>Di PC Anda, buka ikon tersembunyi <strong>(^)</strong> di dekat jam, klik kanan ikon Thumbpad, lalu pilih <strong>Pasangkan perangkat…</strong>. <span>Kemudian di aplikasi, ketuk</span> <strong>Pasangkan PC</strong> <span>lalu pindai kode QR. Anda hanya perlu melakukannya sekali.</span>
+      <div class="loop four">
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_1.webp" width="540" height="380" alt="Taskbar dengan panah ikon tersembunyi (^) disorot">
+          <span class="n">1</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_2.webp" width="540" height="380" alt="Ikon tersembunyi terbuka dengan ikon Thumbpad disorot">
+          <span class="n">2</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_3.webp" width="540" height="380" alt="Menu Thumbpad dengan “Pasangkan perangkat…” disorot">
+          <span class="n">3</span>
+        </div>
+        <div class="frame">
+          <img class="shot" src="../assets/guide/tray_4.webp" width="540" height="380" alt="Jendela Thumbpad untuk memasangkan ponsel, menampilkan kode QR">
+          <span class="n">4</span>
+        </div>
+      </div>
     </li>
   </ol>
 
