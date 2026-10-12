@@ -199,6 +199,21 @@
     border: 1px solid var(--border); background: var(--panel);
   }
   .video iframe { display: block; width: 100%; height: 100%; border: 0; }
+  .feedback-sub { color: var(--muted); margin: 0 0 16px; }
+  .feedback { display: flex; gap: 12px; flex-wrap: wrap; }
+  /* Outlined so they don't compete with the Download button. */
+  .feedback a {
+    flex: 1 1 200px;
+    text-align: center;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    border-radius: 8px;
+    padding: 12px 20px;
+  }
+  .feedback a:hover { border-color: var(--accent); }
   footer { color: var(--muted); font-size: 13px; margin-top: 56px; border-top: 1px solid var(--border); padding-top: 20px; }
   footer a { color: var(--muted); }
 </style>
@@ -305,6 +320,13 @@
     <a class="badge" href="https://play.google.com/store/apps/details?id=com.thumbpad.app&amp;hl=it" target="_blank" rel="noopener noreferrer" aria-label="Scarica Thumbpad su Google Play">
       <img alt="Disponibile su Google Play" src="../assets/badges/it.png" width="646" height="250">
     </a>
+  </div>
+
+  <h2>Aiuto e feedback</h2>
+  <p class="feedback-sub">Manca una funzione o qualcosa non funziona? Faccelo sapere.</p>
+  <div class="feedback">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSejUSo-CCSmLJn8ExXUxchKatI1AzpBR9P_vvQ3m_Z99F-8cg/viewform?hl=it" target="_blank" rel="noopener noreferrer">Richiedi una funzione</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdL70slbfNb6CBBe81w35KHRlFIsrNz6zGr_BeQsdXwzQM8RQ/viewform?hl=it" target="_blank" rel="noopener noreferrer">Segnala un problema</a>
   </div>
 
   <footer>
