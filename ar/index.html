@@ -167,6 +167,8 @@
   .get-app .badge img { height: 56px; width: auto; display: block; margin: -8px -10px; }
   .shot { display: block; max-width: 100%; height: auto; margin: 12px 0 4px; border-radius: 8px; }
   .shot.narrow { max-width: 72%; }
+  /* The QR route under the pairing step: secondary to picking the PC. */
+  .alt-route { color: var(--muted); margin: 20px 0 0; }
   /* Two screenshots of one dialog, crossfading: first click, then second. */
   .loop { position: relative; margin: 12px 0 4px; }
   .loop .frame { position: relative; }
@@ -272,7 +274,7 @@
         </div>
       </div>
     </li>
-    <li>انقر على <strong>Next</strong> ثم على <strong>Install</strong>. <span>(برنامج التثبيت متوفر بالإنجليزية فقط حاليًا.) إذا طلب Windows الإذن بإجراء تغييرات، فانقر على «نعم» ليعمل Thumbpad تلقائيًا مع بدء تشغيل Windows. عند الانتهاء تُفتح نافذة إقران تعرض رمز QR.</span>
+    <li>انقر على <strong>Next</strong> ثم على <strong>Install</strong>. <span>(برنامج التثبيت متوفر بالإنجليزية فقط حاليًا.) إذا طلب Windows الإذن بإجراء تغييرات، فانقر على «نعم» ليعمل Thumbpad تلقائيًا مع بدء تشغيل Windows. عند الانتهاء يبقى Thumbpad قيد التشغيل في علبة النظام بجوار الساعة.</span>
       <div class="loop">
         <div class="frame">
           <img class="shot" src="../assets/guide/install_1.webp" width="798" height="615" alt="صفحة خيارات الإعداد مع تمييز «Next»">
@@ -288,7 +290,9 @@
       <img class="shot narrow" src="../assets/guide/firewall.webp" width="518" height="519" alt="تنبيه أمن Windows بشأن الوصول إلى الشبكة مع تمييز «السماح»">
     </li>
     <li>ثبّت <a href="https://play.google.com/store/apps/details?id=com.thumbpad.app&amp;hl=ar" target="_blank" rel="noopener noreferrer">تطبيق <strong>Thumbpad</strong></a> من Google Play على هاتف Android. <span>يجب أن يكون الهاتف والكمبيوتر على شبكة Wi-Fi نفسها.</span></li>
-    <li>على الكمبيوتر، افتح الأيقونات المخفية <strong>(^)</strong> بجوار الساعة، وانقر بزر الماوس الأيمن على أيقونة Thumbpad واختر <strong>إقران جهاز…</strong>. <span>ثم في التطبيق، انقر على</span> <strong>إقران كمبيوتر</strong> <span>وامسح رمز QR. ستحتاج إلى الإقران مرة واحدة فقط.</span>
+    <li>افتح التطبيق على هاتفك، واختر الكمبيوتر من القائمة، ثم اضغط على <strong>إقران</strong>. <span>يطلب الكمبيوتر الموافقة على الهاتف: انقر على</span> <strong>Accept</strong> <span>إذا ظهر الرمز نفسه الذي يعرضه الهاتف. لن تحتاج إلى الإقران إلا مرة واحدة.</span>
+      <img class="shot narrow" src="../assets/guide/pair_prompt.webp" width="577" height="447" alt="طلب إقران Thumbpad على الكمبيوتر يعرض رمزًا من 6 أرقام مع زرّي القبول والرفض">
+      <p class="alt-route">الكمبيوتر غير موجود في القائمة؟ افتح الرموز المخفية <strong>(^)</strong> بجوار الساعة، وانقر بزر الفأرة الأيمن على رمز Thumbpad، واختر <strong>إقران جهاز…</strong>، ثم اضغط في التطبيق على <strong>الإقران باستخدام رمز QR بدلاً من ذلك</strong>.</p>
       <div class="loop four">
         <div class="frame">
           <img class="shot" src="../assets/guide/tray_1.webp" width="540" height="380" alt="شريط المهام مع تمييز سهم الأيقونات المخفية (^)">
@@ -330,7 +334,7 @@
   </div>
 
   <footer>
-    هل ثبّته بالفعل؟ انقر بزر الماوس الأيمن على أيقونة Thumbpad في علبة النظام (بجوار الساعة) لإعادة الإقران أو الخروج.
+    مثبّت بالفعل؟ انقر بزر الفأرة الأيمن على رمز Thumbpad في علبة النظام (بجوار الساعة) لإدارة الهواتف المقترنة أو للإنهاء.
     · <a href="https://github.com/NCirit/thumbpad-releases/releases/latest">كل التنزيلات</a>
   </footer>
 </main>

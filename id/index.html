@@ -167,6 +167,8 @@
   .get-app .badge img { height: 56px; width: auto; display: block; margin: -8px -10px; }
   .shot { display: block; max-width: 100%; height: auto; margin: 12px 0 4px; border-radius: 8px; }
   .shot.narrow { max-width: 72%; }
+  /* The QR route under the pairing step: secondary to picking the PC. */
+  .alt-route { color: var(--muted); margin: 20px 0 0; }
   /* Two screenshots of one dialog, crossfading: first click, then second. */
   .loop { position: relative; margin: 12px 0 4px; }
   .loop .frame { position: relative; }
@@ -272,7 +274,7 @@
         </div>
       </div>
     </li>
-    <li>Klik <strong>Next</strong>, lalu <strong>Install</strong>. <span>(Untuk saat ini, penginstalnya hanya tersedia dalam bahasa Inggris.) Jika Windows meminta izin untuk membuat perubahan, klik “Ya” agar Thumbpad ikut berjalan saat Windows dinyalakan. Setelah selesai, jendela untuk memasangkan ponsel akan terbuka dengan kode QR.</span>
+    <li>Klik <strong>Next</strong>, lalu <strong>Install</strong>. <span>(Untuk saat ini, penginstalnya hanya tersedia dalam bahasa Inggris.) Jika Windows meminta izin untuk membuat perubahan, klik “Ya” agar Thumbpad ikut berjalan saat Windows dinyalakan. Setelah selesai, Thumbpad tetap berjalan di baki sistem dekat jam.</span>
       <div class="loop">
         <div class="frame">
           <img class="shot" src="../assets/guide/install_1.webp" width="798" height="615" alt="Halaman opsi penyiapan dengan “Next” disorot">
@@ -288,7 +290,9 @@
       <img class="shot narrow" src="../assets/guide/firewall.webp" width="518" height="519" alt="Permintaan akses jaringan dari Keamanan Windows dengan “Izinkan” disorot">
     </li>
     <li>Pasang <a href="https://play.google.com/store/apps/details?id=com.thumbpad.app&amp;hl=id" target="_blank" rel="noopener noreferrer">aplikasi <strong>Thumbpad</strong></a> dari Google Play di ponsel Android Anda. <span>Pastikan ponsel dan PC terhubung ke jaringan Wi-Fi yang sama.</span></li>
-    <li>Di PC Anda, buka ikon tersembunyi <strong>(^)</strong> di dekat jam, klik kanan ikon Thumbpad, lalu pilih <strong>Pasangkan perangkat…</strong>. <span>Kemudian di aplikasi, ketuk</span> <strong>Pasangkan PC</strong> <span>lalu pindai kode QR. Anda hanya perlu melakukannya sekali.</span>
+    <li>Buka aplikasi di ponsel Anda, pilih PC Anda dari daftar, lalu ketuk <strong>Pasangkan</strong>. <span>PC Anda meminta persetujuan untuk ponsel: klik</span> <strong>Terima</strong> <span>jika kodenya sama dengan yang ada di ponsel. Anda hanya perlu memasangkan sekali.</span>
+      <img class="shot narrow" src="../assets/guide/pair_prompt.webp" width="577" height="447" alt="Permintaan pemasangan Thumbpad di PC dengan kode 6 digit serta tombol Terima dan Tolak">
+      <p class="alt-route">PC tidak ada di daftar? Buka ikon tersembunyi <strong>(^)</strong> di dekat jam, klik kanan ikon Thumbpad, pilih <strong>Pasangkan perangkat…</strong>, lalu ketuk <strong>Pasangkan dengan kode QR</strong> di aplikasi.</p>
       <div class="loop four">
         <div class="frame">
           <img class="shot" src="../assets/guide/tray_1.webp" width="540" height="380" alt="Taskbar dengan panah ikon tersembunyi (^) disorot">
@@ -330,7 +334,7 @@
   </div>
 
   <footer>
-    Sudah terpasang? Klik kanan ikon Thumbpad di baki sistem (dekat jam) untuk memasangkan ulang atau keluar.
+    Sudah terinstal? Klik kanan ikon Thumbpad di baki sistem (dekat jam) untuk mengelola ponsel yang dipasangkan atau keluar.
     · <a href="https://github.com/NCirit/thumbpad-releases/releases/latest">Semua unduhan</a>
   </footer>
 </main>

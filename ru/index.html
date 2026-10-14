@@ -167,6 +167,8 @@
   .get-app .badge img { height: 56px; width: auto; display: block; margin: -8px -10px; }
   .shot { display: block; max-width: 100%; height: auto; margin: 12px 0 4px; border-radius: 8px; }
   .shot.narrow { max-width: 72%; }
+  /* The QR route under the pairing step: secondary to picking the PC. */
+  .alt-route { color: var(--muted); margin: 20px 0 0; }
   /* Two screenshots of one dialog, crossfading: first click, then second. */
   .loop { position: relative; margin: 12px 0 4px; }
   .loop .frame { position: relative; }
@@ -272,7 +274,7 @@
         </div>
       </div>
     </li>
-    <li>Нажмите <strong>Next</strong>, затем <strong>Install</strong>. <span>(Пока установщик есть только на английском.) Если Windows спросит, разрешить ли внесение изменений, нажмите «Да», чтобы Thumbpad запускался вместе с Windows. В конце откроется окно сопряжения с QR-кодом.</span>
+    <li>Нажмите <strong>Next</strong>, затем <strong>Install</strong>. <span>(Пока установщик есть только на английском.) Если Windows спросит, разрешить ли внесение изменений, нажмите «Да», чтобы Thumbpad запускался вместе с Windows. После установки Thumbpad продолжит работать в области уведомлений рядом с часами.</span>
       <div class="loop">
         <div class="frame">
           <img class="shot" src="../assets/guide/install_1.webp" width="798" height="615" alt="Страница параметров установки, выделена кнопка «Next»">
@@ -288,7 +290,9 @@
       <img class="shot narrow" src="../assets/guide/firewall.webp" width="518" height="519" alt="Запрос доступа к сети от «Безопасности Windows», выделена кнопка «Разрешить»">
     </li>
     <li>Установите <a href="https://play.google.com/store/apps/details?id=com.thumbpad.app&amp;hl=ru" target="_blank" rel="noopener noreferrer">приложение <strong>Thumbpad</strong></a> из Google Play на Android-телефон. <span>Телефон и ПК должны быть подключены к одной сети Wi-Fi.</span></li>
-    <li>На ПК откройте скрытые значки <strong>(^)</strong> рядом с часами, щёлкните правой кнопкой мыши по значку Thumbpad и выберите <strong>Сопрячь устройство…</strong>. <span>Затем в приложении нажмите</span> <strong>Сопрячь ПК</strong> <span>и отсканируйте QR-код. Это нужно сделать всего один раз.</span>
+    <li>Откройте приложение на телефоне, выберите ПК в списке и нажмите <strong>Сопрячь</strong>. <span>ПК попросит одобрить телефон: нажмите</span> <strong>Принять</strong>, <span>если он показывает тот же код, что и телефон. Сопряжение нужно только один раз.</span>
+      <img class="shot narrow" src="../assets/guide/pair_prompt.webp" width="577" height="447" alt="Запрос на сопряжение Thumbpad на ПК с 6-значным кодом и кнопками «Принять» и «Отклонить»">
+      <p class="alt-route">ПК нет в списке? Откройте скрытые значки <strong>(^)</strong> рядом с часами, щёлкните правой кнопкой значок Thumbpad, выберите <strong>Сопрячь устройство…</strong> и нажмите в приложении <strong>Сопрячь по QR-коду</strong>.</p>
       <div class="loop four">
         <div class="frame">
           <img class="shot" src="../assets/guide/tray_1.webp" width="540" height="380" alt="Панель задач, выделена стрелка скрытых значков (^)">
@@ -330,7 +334,7 @@
   </div>
 
   <footer>
-    Уже установили? Щёлкните правой кнопкой мыши по значку Thumbpad в области уведомлений (рядом с часами), чтобы заново выполнить сопряжение или выйти.
+    Уже установлено? Щёлкните правой кнопкой значок Thumbpad в области уведомлений (рядом с часами), чтобы управлять сопряжёнными телефонами или выйти.
     · <a href="https://github.com/NCirit/thumbpad-releases/releases/latest">Все загрузки</a>
   </footer>
 </main>

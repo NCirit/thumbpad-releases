@@ -167,6 +167,8 @@
   .get-app .badge img { height: 56px; width: auto; display: block; margin: -8px -10px; }
   .shot { display: block; max-width: 100%; height: auto; margin: 12px 0 4px; border-radius: 8px; }
   .shot.narrow { max-width: 72%; }
+  /* The QR route under the pairing step: secondary to picking the PC. */
+  .alt-route { color: var(--muted); margin: 20px 0 0; }
   /* Two screenshots of one dialog, crossfading: first click, then second. */
   .loop { position: relative; margin: 12px 0 4px; }
   .loop .frame { position: relative; }
@@ -272,7 +274,7 @@
         </div>
       </div>
     </li>
-    <li>Clique sur <strong>Next</strong>, puis sur <strong>Install</strong>. <span>(Pour l'instant, le programme d'installation n'existe qu'en anglais.) Si Windows te demande d'autoriser les modifications, clique sur « Oui » pour que Thumbpad démarre avec Windows. À la fin, une fenêtre d'association avec un code QR s'ouvre.</span>
+    <li>Clique sur <strong>Next</strong>, puis sur <strong>Install</strong>. <span>(Pour l'instant, le programme d'installation n'existe qu'en anglais.) Si Windows te demande d'autoriser les modifications, clique sur « Oui » pour que Thumbpad démarre avec Windows. À la fin, Thumbpad reste ouvert dans la zone de notification, près de l'horloge.</span>
       <div class="loop">
         <div class="frame">
           <img class="shot" src="../assets/guide/install_1.webp" width="798" height="615" alt="Page des options d&#x27;installation avec « Next » en surbrillance">
@@ -288,7 +290,9 @@
       <img class="shot narrow" src="../assets/guide/firewall.webp" width="518" height="519" alt="Demande d&#x27;accès au réseau de Sécurité Windows avec « Autoriser » en surbrillance">
     </li>
     <li>Installe l'<a href="https://play.google.com/store/apps/details?id=com.thumbpad.app&amp;hl=fr" target="_blank" rel="noopener noreferrer">appli <strong>Thumbpad</strong></a> depuis Google Play sur ton téléphone Android. <span>Le téléphone et le PC doivent être sur le même réseau Wi-Fi.</span></li>
-    <li>Sur ton PC, ouvre les icônes cachées <strong>(^)</strong> près de l'horloge, fais un clic droit sur l'icône Thumbpad et choisis <strong>Associer un appareil…</strong>. <span>Ensuite, dans l'appli, appuie sur</span> <strong>Associer un PC</strong> <span>et scanne le code QR. Tu n'auras à le faire qu'une seule fois.</span>
+    <li>Ouvre l'appli sur ton téléphone, choisis ton PC dans la liste et touche <strong>Associer</strong>. <span>Ton PC demande d'approuver le téléphone : clique sur</span> <strong>Accepter</strong> <span>s'il affiche le même code que le téléphone. Tu n'auras à associer qu'une seule fois.</span>
+      <img class="shot narrow" src="../assets/guide/pair_prompt.webp" width="577" height="447" alt="Demande d&#x27;association Thumbpad sur le PC avec un code à 6 chiffres et les boutons Accepter et Refuser">
+      <p class="alt-route">Ton PC n'est pas dans la liste ? Ouvre les icônes cachées <strong>(^)</strong> près de l'horloge, fais un clic droit sur l'icône Thumbpad, choisis <strong>Associer un appareil…</strong> et touche <strong>Associer avec un code QR</strong> dans l'appli.</p>
       <div class="loop four">
         <div class="frame">
           <img class="shot" src="../assets/guide/tray_1.webp" width="540" height="380" alt="Barre des tâches avec la flèche des icônes cachées (^) en surbrillance">
@@ -330,7 +334,7 @@
   </div>
 
   <footer>
-    Déjà installé ? Fais un clic droit sur l'icône Thumbpad dans la zone de notification (près de l'horloge) pour refaire l'association ou quitter.
+    Déjà installé ? Fais un clic droit sur l'icône Thumbpad dans la zone de notification (près de l'horloge) pour gérer les téléphones associés ou quitter.
     · <a href="https://github.com/NCirit/thumbpad-releases/releases/latest">Tous les téléchargements</a>
   </footer>
 </main>

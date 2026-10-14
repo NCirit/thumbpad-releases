@@ -167,6 +167,8 @@
   .get-app .badge img { height: 56px; width: auto; display: block; margin: -8px -10px; }
   .shot { display: block; max-width: 100%; height: auto; margin: 12px 0 4px; border-radius: 8px; }
   .shot.narrow { max-width: 72%; }
+  /* The QR route under the pairing step: secondary to picking the PC. */
+  .alt-route { color: var(--muted); margin: 20px 0 0; }
   /* Two screenshots of one dialog, crossfading: first click, then second. */
   .loop { position: relative; margin: 12px 0 4px; }
   .loop .frame { position: relative; }
@@ -272,7 +274,7 @@
         </div>
       </div>
     </li>
-    <li>Clique em <strong>Next</strong> e depois em <strong>Install</strong>. <span>(Por enquanto, o instalador está só em inglês.) Se o Windows pedir permissão para fazer alterações, clique em “Sim” para o Thumbpad iniciar junto com o Windows. No final, abre uma janela de pareamento com um código QR.</span>
+    <li>Clique em <strong>Next</strong> e depois em <strong>Install</strong>. <span>(Por enquanto, o instalador está só em inglês.) Se o Windows pedir permissão para fazer alterações, clique em “Sim” para o Thumbpad iniciar junto com o Windows. No final, o Thumbpad continua rodando na bandeja do sistema, perto do relógio.</span>
       <div class="loop">
         <div class="frame">
           <img class="shot" src="../assets/guide/install_1.webp" width="798" height="615" alt="Página de opções da instalação com “Next” destacado">
@@ -288,7 +290,9 @@
       <img class="shot narrow" src="../assets/guide/firewall.webp" width="518" height="519" alt="Aviso de acesso à rede da Segurança do Windows com “Permitir” destacado">
     </li>
     <li>Instale o <a href="https://play.google.com/store/apps/details?id=com.thumbpad.app&amp;hl=pt-BR" target="_blank" rel="noopener noreferrer">app <strong>Thumbpad</strong></a> pelo Google Play no seu celular Android. <span>O celular e o PC precisam estar na mesma rede Wi-Fi.</span></li>
-    <li>No seu PC, abra os ícones ocultos <strong>(^)</strong> perto do relógio, clique com o botão direito no ícone do Thumbpad e escolha <strong>Parear dispositivo…</strong>. <span>Depois, no app, toque em</span> <strong>Parear um PC</strong> <span>e escaneie o código QR. Você só precisa parear uma vez.</span>
+    <li>Abra o app no celular, escolha seu PC na lista e toque em <strong>Parear</strong>. <span>O PC pede para aprovar o celular: clique em</span> <strong>Aceitar</strong> <span>se ele mostrar o mesmo código do celular. Você só precisa parear uma vez.</span>
+      <img class="shot narrow" src="../assets/guide/pair_prompt.webp" width="577" height="447" alt="Pedido de pareamento do Thumbpad no PC com um código de 6 dígitos e os botões Aceitar e Recusar">
+      <p class="alt-route">O PC não está na lista? Abra os ícones ocultos <strong>(^)</strong> perto do relógio, clique com o botão direito no ícone do Thumbpad, escolha <strong>Parear dispositivo…</strong> e toque em <strong>Parear com código QR</strong> no app.</p>
       <div class="loop four">
         <div class="frame">
           <img class="shot" src="../assets/guide/tray_1.webp" width="540" height="380" alt="Barra de tarefas com a seta dos ícones ocultos (^) destacada">
@@ -330,7 +334,7 @@
   </div>
 
   <footer>
-    Já instalou? Clique com o botão direito no ícone do Thumbpad na bandeja do sistema (perto do relógio) para parear de novo ou sair.
+    Já instalou? Clique com o botão direito no ícone do Thumbpad na bandeja do sistema (perto do relógio) para gerenciar os celulares pareados ou sair.
     · <a href="https://github.com/NCirit/thumbpad-releases/releases/latest">Todos os downloads</a>
   </footer>
 </main>

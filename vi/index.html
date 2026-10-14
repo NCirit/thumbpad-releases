@@ -167,6 +167,8 @@
   .get-app .badge img { height: 56px; width: auto; display: block; margin: -8px -10px; }
   .shot { display: block; max-width: 100%; height: auto; margin: 12px 0 4px; border-radius: 8px; }
   .shot.narrow { max-width: 72%; }
+  /* The QR route under the pairing step: secondary to picking the PC. */
+  .alt-route { color: var(--muted); margin: 20px 0 0; }
   /* Two screenshots of one dialog, crossfading: first click, then second. */
   .loop { position: relative; margin: 12px 0 4px; }
   .loop .frame { position: relative; }
@@ -272,7 +274,7 @@
         </div>
       </div>
     </li>
-    <li>Bấm <strong>Next</strong>, rồi bấm <strong>Install</strong>. <span>(Hiện trình cài đặt chỉ có tiếng Anh.) Nếu Windows hỏi có cho phép thay đổi không, hãy bấm “Có” để Thumbpad khởi động cùng Windows. Cài xong, một cửa sổ ghép nối có mã QR sẽ mở ra.</span>
+    <li>Bấm <strong>Next</strong>, rồi bấm <strong>Install</strong>. <span>(Hiện trình cài đặt chỉ có tiếng Anh.) Nếu Windows hỏi có cho phép thay đổi không, hãy bấm “Có” để Thumbpad khởi động cùng Windows. Cài xong, Thumbpad tiếp tục chạy trong khay hệ thống gần đồng hồ.</span>
       <div class="loop">
         <div class="frame">
           <img class="shot" src="../assets/guide/install_1.webp" width="798" height="615" alt="Trang tùy chọn cài đặt, nút “Next” được tô sáng">
@@ -288,7 +290,9 @@
       <img class="shot narrow" src="../assets/guide/firewall.webp" width="518" height="519" alt="Hộp thoại truy cập mạng của Bảo mật Windows, nút “Cho phép” được tô sáng">
     </li>
     <li>Cài <a href="https://play.google.com/store/apps/details?id=com.thumbpad.app&amp;hl=vi" target="_blank" rel="noopener noreferrer">ứng dụng <strong>Thumbpad</strong></a> từ Google Play trên điện thoại Android. <span>Điện thoại và PC cần dùng chung một mạng Wi-Fi.</span></li>
-    <li>Trên PC, mở các biểu tượng ẩn <strong>(^)</strong> gần đồng hồ, nhấp chuột phải vào biểu tượng Thumbpad và chọn <strong>Ghép nối thiết bị…</strong>. <span>Sau đó, trong ứng dụng, chạm</span> <strong>Ghép nối PC</strong> <span>rồi quét mã QR. Bạn chỉ cần ghép nối một lần.</span>
+    <li>Mở ứng dụng trên điện thoại, chọn PC trong danh sách rồi nhấn <strong>Ghép nối</strong>. <span>PC sẽ hỏi có cho phép điện thoại không: bấm</span> <strong>Chấp nhận</strong> <span>nếu PC hiện cùng mã với điện thoại. Bạn chỉ cần ghép nối một lần.</span>
+      <img class="shot narrow" src="../assets/guide/pair_prompt.webp" width="577" height="447" alt="Yêu cầu ghép nối Thumbpad trên PC hiện mã 6 chữ số cùng nút Chấp nhận và Từ chối">
+      <p class="alt-route">Không thấy PC trong danh sách? Mở các biểu tượng ẩn <strong>(^)</strong> gần đồng hồ, nhấp chuột phải vào biểu tượng Thumbpad, chọn <strong>Ghép nối thiết bị…</strong> rồi nhấn <strong>Ghép nối bằng mã QR</strong> trong ứng dụng.</p>
       <div class="loop four">
         <div class="frame">
           <img class="shot" src="../assets/guide/tray_1.webp" width="540" height="380" alt="Thanh tác vụ, mũi tên biểu tượng ẩn (^) được tô sáng">
@@ -330,7 +334,7 @@
   </div>
 
   <footer>
-    Đã cài rồi? Nhấp chuột phải vào biểu tượng Thumbpad ở khay hệ thống (gần đồng hồ) để ghép nối lại hoặc thoát.
+    Đã cài rồi? Nhấp chuột phải vào biểu tượng Thumbpad trong khay hệ thống (gần đồng hồ) để quản lý điện thoại đã ghép nối hoặc thoát.
     · <a href="https://github.com/NCirit/thumbpad-releases/releases/latest">Tất cả bản tải xuống</a>
   </footer>
 </main>

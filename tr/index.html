@@ -167,6 +167,8 @@
   .get-app .badge img { height: 56px; width: auto; display: block; margin: -8px -10px; }
   .shot { display: block; max-width: 100%; height: auto; margin: 12px 0 4px; border-radius: 8px; }
   .shot.narrow { max-width: 72%; }
+  /* The QR route under the pairing step: secondary to picking the PC. */
+  .alt-route { color: var(--muted); margin: 20px 0 0; }
   /* Two screenshots of one dialog, crossfading: first click, then second. */
   .loop { position: relative; margin: 12px 0 4px; }
   .loop .frame { position: relative; }
@@ -272,7 +274,7 @@
         </div>
       </div>
     </li>
-    <li>Önce <strong>Next</strong>'e, sonra <strong>Install</strong>'a tıklayın. <span>(Kurulum programı şimdilik yalnızca İngilizce.) Windows değişikliklere izin vermenizi isterse “Evet”e tıklayın; böylece Thumbpad Windows ile birlikte açılır. Kurulum bitince QR kodlu bir eşleştirme penceresi açılır.</span>
+    <li>Önce <strong>Next</strong>'e, sonra <strong>Install</strong>'a tıklayın. <span>(Kurulum programı şimdilik yalnızca İngilizce.) Windows değişikliklere izin vermenizi isterse “Evet”e tıklayın; böylece Thumbpad Windows ile birlikte açılır. Kurulum bitince Thumbpad saatin yanındaki sistem tepsisinde çalışmaya devam eder.</span>
       <div class="loop">
         <div class="frame">
           <img class="shot" src="../assets/guide/install_1.webp" width="798" height="615" alt="Kurulum seçenekleri sayfası, “Next” vurgulanmış">
@@ -288,7 +290,9 @@
       <img class="shot narrow" src="../assets/guide/firewall.webp" width="518" height="519" alt="Windows Güvenliği ağ erişimi uyarısı, “İzin ver” vurgulanmış">
     </li>
     <li>Android telefonunuza Google Play'den <a href="https://play.google.com/store/apps/details?id=com.thumbpad.app&amp;hl=tr" target="_blank" rel="noopener noreferrer"><strong>Thumbpad</strong> uygulamasını</a> yükleyin. <span>Telefonunuz ve bilgisayarınız aynı Wi-Fi ağına bağlı olmalı.</span></li>
-    <li>Bilgisayarınızda saatin yanındaki gizli simgeleri <strong>(^)</strong> açın, Thumbpad simgesine sağ tıklayın ve <strong>Cihaz eşleştir…</strong> seçeneğini seçin. <span>Ardından uygulamada</span> <strong>PC eşleştir</strong><span>'e dokunun ve QR kodunu okutun. Eşleştirmeyi yalnızca bir kez yapmanız yeterli.</span>
+    <li>Telefonunuzda uygulamayı açın, listeden PC'nizi seçip <strong>Eşleştir</strong>'e dokunun. <span>PC'niz telefonu onaylamanızı ister: Telefondakiyle aynı kodu gösteriyorsa</span> <strong>Kabul et</strong><span>'e tıklayın. Eşleştirmeyi yalnızca bir kez yaparsınız.</span>
+      <img class="shot narrow" src="../assets/guide/pair_prompt.webp" width="577" height="447" alt="PC&#x27;de 6 haneli kod ile Kabul et ve Reddet düğmelerini gösteren Thumbpad eşleştirme isteği">
+      <p class="alt-route">PC listede yok mu? Saatin yanındaki gizli simgeleri <strong>(^)</strong> açın, Thumbpad simgesine sağ tıklayıp <strong>Cihaz eşleştir…</strong>'i seçin ve uygulamada <strong>Bunun yerine QR koduyla eşleştir</strong>'e dokunun.</p>
       <div class="loop four">
         <div class="frame">
           <img class="shot" src="../assets/guide/tray_1.webp" width="540" height="380" alt="Görev çubuğu, gizli simgeler oku (^) vurgulanmış">
@@ -330,7 +334,7 @@
   </div>
 
   <footer>
-    Zaten kurulu mu? Yeniden eşleştirmek veya kapatmak için sistem tepsisindeki (saatin yanında) Thumbpad simgesine sağ tıklayın.
+    Zaten kurulu mu? Eşleştirilmiş telefonları yönetmek veya kapatmak için sistem tepsisindeki (saatin yanında) Thumbpad simgesine sağ tıklayın.
     · <a href="https://github.com/NCirit/thumbpad-releases/releases/latest">Tüm indirmeler</a>
   </footer>
 </main>

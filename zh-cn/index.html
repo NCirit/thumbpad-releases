@@ -167,6 +167,8 @@
   .get-app .badge img { height: 56px; width: auto; display: block; margin: -8px -10px; }
   .shot { display: block; max-width: 100%; height: auto; margin: 12px 0 4px; border-radius: 8px; }
   .shot.narrow { max-width: 72%; }
+  /* The QR route under the pairing step: secondary to picking the PC. */
+  .alt-route { color: var(--muted); margin: 20px 0 0; }
   /* Two screenshots of one dialog, crossfading: first click, then second. */
   .loop { position: relative; margin: 12px 0 4px; }
   .loop .frame { position: relative; }
@@ -272,7 +274,7 @@
         </div>
       </div>
     </li>
-    <li>依次点击 <strong>Next</strong> 和 <strong>Install</strong>。<span>（安装程序目前只有英文版。）如果 Windows 询问是否允许更改，请点击“是”，这样 Thumbpad 会随 Windows 一起启动。安装完成后会打开一个带二维码的配对窗口。</span>
+    <li>依次点击 <strong>Next</strong> 和 <strong>Install</strong>。<span>（安装程序目前只有英文版。）如果 Windows 询问是否允许更改，请点击“是”，这样 Thumbpad 会随 Windows 一起启动。安装完成后，Thumbpad 会在时钟旁的系统托盘中持续运行。</span>
       <div class="loop">
         <div class="frame">
           <img class="shot" src="../assets/guide/install_1.webp" width="798" height="615" alt="安装选项页面，“Next”已突出显示">
@@ -288,7 +290,9 @@
       <img class="shot narrow" src="../assets/guide/firewall.webp" width="518" height="519" alt="Windows 安全中心的网络访问提示，“允许”已突出显示">
     </li>
     <li>在 Android 手机上从 Google Play 安装 <a href="https://play.google.com/store/apps/details?id=com.thumbpad.app&amp;hl=zh-CN" target="_blank" rel="noopener noreferrer"><strong>Thumbpad</strong> 应用</a>。<span>手机和电脑需要连接同一个 Wi-Fi 网络。</span></li>
-    <li>在电脑上，打开时钟附近的隐藏图标<strong>（^）</strong>，右键单击 Thumbpad 图标并选择<strong>配对设备…</strong>。<span>然后在应用中点按</span><strong>配对电脑</strong><span>，扫描二维码。只需配对一次。</span>
+    <li>在手机上打开应用，从列表中选择你的电脑，然后点按<strong>配对</strong>。<span>电脑会请求批准这部手机：如果显示的代码与手机相同，请点击</span><strong>接受</strong><span>。只需配对这一次。</span>
+      <img class="shot narrow" src="../assets/guide/pair_prompt.webp" width="577" height="447" alt="电脑上的 Thumbpad 配对请求，显示 6 位代码以及“接受”和“拒绝”按钮">
+      <p class="alt-route">列表中没有你的电脑？打开时钟旁的隐藏图标<strong>（^）</strong>，右键单击 Thumbpad 图标，选择<strong>配对设备…</strong>，然后在应用中点按<strong>改用二维码配对</strong>。</p>
       <div class="loop four">
         <div class="frame">
           <img class="shot" src="../assets/guide/tray_1.webp" width="540" height="380" alt="任务栏，隐藏图标箭头（^）已突出显示">
@@ -330,7 +334,7 @@
   </div>
 
   <footer>
-    已经装好了？右键点击系统托盘（时钟旁边）中的 Thumbpad 图标，即可重新配对或退出。
+    已经安装？右键单击系统托盘（时钟旁）中的 Thumbpad 图标，即可管理已配对的手机或退出。
     · <a href="https://github.com/NCirit/thumbpad-releases/releases/latest">所有下载</a>
   </footer>
 </main>

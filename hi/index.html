@@ -167,6 +167,8 @@
   .get-app .badge img { height: 56px; width: auto; display: block; margin: -8px -10px; }
   .shot { display: block; max-width: 100%; height: auto; margin: 12px 0 4px; border-radius: 8px; }
   .shot.narrow { max-width: 72%; }
+  /* The QR route under the pairing step: secondary to picking the PC. */
+  .alt-route { color: var(--muted); margin: 20px 0 0; }
   /* Two screenshots of one dialog, crossfading: first click, then second. */
   .loop { position: relative; margin: 12px 0 4px; }
   .loop .frame { position: relative; }
@@ -272,7 +274,7 @@
         </div>
       </div>
     </li>
-    <li><strong>Next</strong> पर और फिर <strong>Install</strong> पर क्लिक करें। <span>(इंस्टॉलर अभी सिर्फ़ अंग्रेज़ी में है।) अगर Windows बदलाव करने की अनुमति माँगे, तो “हाँ” (Yes) पर क्लिक करें, ताकि Thumbpad Windows के साथ अपने-आप शुरू हो। इंस्टॉल पूरा होने पर QR कोड वाली पेयरिंग विंडो खुलेगी।</span>
+    <li><strong>Next</strong> पर और फिर <strong>Install</strong> पर क्लिक करें। <span>(इंस्टॉलर अभी सिर्फ़ अंग्रेज़ी में है।) अगर Windows बदलाव करने की अनुमति माँगे, तो “हाँ” (Yes) पर क्लिक करें, ताकि Thumbpad Windows के साथ अपने-आप शुरू हो। इंस्टॉल पूरा होने पर Thumbpad घड़ी के पास सिस्टम ट्रे में चलता रहेगा।</span>
       <div class="loop">
         <div class="frame">
           <img class="shot" src="../assets/guide/install_1.webp" width="798" height="615" alt="सेटअप विकल्पों वाला पेज, जिसमें “Next” हाइलाइट है">
@@ -288,7 +290,9 @@
       <img class="shot narrow" src="../assets/guide/firewall.webp" width="518" height="519" alt="Windows सुरक्षा का नेटवर्क ऐक्सेस प्रॉम्प्ट, जिसमें “अनुमति दें” हाइलाइट है">
     </li>
     <li>अपने Android फ़ोन पर Google Play से <a href="https://play.google.com/store/apps/details?id=com.thumbpad.app&amp;hl=hi" target="_blank" rel="noopener noreferrer"><strong>Thumbpad</strong> ऐप</a> इंस्टॉल करें। <span>फ़ोन और PC एक ही Wi-Fi नेटवर्क पर होने चाहिए।</span></li>
-    <li>अपने PC पर घड़ी के पास छिपे आइकन <strong>(^)</strong> खोलें, Thumbpad आइकन पर राइट-क्लिक करें और <strong>डिवाइस पेयर करें…</strong> चुनें। <span>फिर ऐप में</span> <strong>PC पेयर करें</strong> <span>पर टैप करें और QR कोड स्कैन करें। पेयर सिर्फ़ एक बार करना होता है।</span>
+    <li>अपने फ़ोन पर ऐप खोलें, सूची से अपना PC चुनें और <strong>पेयर करें</strong> पर टैप करें। <span>आपका PC फ़ोन को मंज़ूरी देने के लिए पूछेगा: अगर वह फ़ोन जैसा ही कोड दिखाए, तो</span> <strong>स्वीकार करें</strong> <span>पर क्लिक करें। पेयर सिर्फ़ एक बार करना होता है।</span>
+      <img class="shot narrow" src="../assets/guide/pair_prompt.webp" width="577" height="447" alt="PC पर Thumbpad पेयरिंग अनुरोध, जिसमें 6 अंकों का कोड और स्वीकार व अस्वीकार बटन हैं">
+      <p class="alt-route">PC सूची में नहीं है? घड़ी के पास छिपे आइकन <strong>(^)</strong> खोलें, Thumbpad आइकन पर राइट-क्लिक करें, <strong>डिवाइस पेयर करें…</strong> चुनें और ऐप में <strong>इसके बजाय QR कोड से पेयर करें</strong> पर टैप करें।</p>
       <div class="loop four">
         <div class="frame">
           <img class="shot" src="../assets/guide/tray_1.webp" width="540" height="380" alt="टास्कबार, जिसमें छिपे आइकन वाला तीर (^) हाइलाइट है">
@@ -330,7 +334,7 @@
   </div>
 
   <footer>
-    पहले से इंस्टॉल है? दोबारा पेयर करने या बंद करने के लिए सिस्टम ट्रे (घड़ी के पास) में Thumbpad आइकन पर राइट-क्लिक करें।
+    पहले से इंस्टॉल है? पेयर किए गए फ़ोन प्रबंधित करने या बंद करने के लिए सिस्टम ट्रे (घड़ी के पास) में Thumbpad आइकन पर राइट-क्लिक करें।
     · <a href="https://github.com/NCirit/thumbpad-releases/releases/latest">सभी डाउनलोड</a>
   </footer>
 </main>

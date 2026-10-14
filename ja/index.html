@@ -167,6 +167,8 @@
   .get-app .badge img { height: 56px; width: auto; display: block; margin: -8px -10px; }
   .shot { display: block; max-width: 100%; height: auto; margin: 12px 0 4px; border-radius: 8px; }
   .shot.narrow { max-width: 72%; }
+  /* The QR route under the pairing step: secondary to picking the PC. */
+  .alt-route { color: var(--muted); margin: 20px 0 0; }
   /* Two screenshots of one dialog, crossfading: first click, then second. */
   .loop { position: relative; margin: 12px 0 4px; }
   .loop .frame { position: relative; }
@@ -272,7 +274,7 @@
         </div>
       </div>
     </li>
-    <li><strong>Next</strong>、<strong>Install</strong> の順にクリックします。<span>（インストーラーは現在英語のみです。）変更の許可を求められたら「はい」をクリックすると、Windowsの起動時にThumbpadも起動するようになります。完了すると、QRコードが表示されたペアリング画面が開きます。</span>
+    <li><strong>Next</strong>、<strong>Install</strong> の順にクリックします。<span>（インストーラーは現在英語のみです。）変更の許可を求められたら「はい」をクリックすると、Windowsの起動時にThumbpadも起動するようになります。完了すると、Thumbpadは時計の近くの通知領域で動き続けます。</span>
       <div class="loop">
         <div class="frame">
           <img class="shot" src="../assets/guide/install_1.webp" width="798" height="615" alt="セットアップオプション画面、「Next」を強調表示">
@@ -288,7 +290,9 @@
       <img class="shot narrow" src="../assets/guide/firewall.webp" width="518" height="519" alt="Windows セキュリティのネットワークアクセス確認画面、「許可」を強調表示">
     </li>
     <li>AndroidスマホにGoogle Playから<a href="https://play.google.com/store/apps/details?id=com.thumbpad.app&amp;hl=ja" target="_blank" rel="noopener noreferrer"><strong>Thumbpad</strong>アプリ</a>をインストールします。<span>スマホとPCは同じWi-Fiネットワークに接続してください。</span></li>
-    <li>PCで時計の近くにある隠れているアイコン<strong>（^）</strong>を開き、Thumbpadアイコンを右クリックして<strong>デバイスをペアリング…</strong>を選びます。<span>次にアプリで</span><strong>PCをペアリング</strong><span>をタップし、QRコードを読み取ります。ペアリングが必要なのは最初の1回だけです。</span>
+    <li>スマホでアプリを開き、一覧からPCを選んで<strong>ペアリング</strong>をタップします。<span>PCにスマホの承認を求める画面が出るので、スマホと同じコードなら</span><strong>承認</strong><span>をクリックします。ペアリングは最初の1回だけです。</span>
+      <img class="shot narrow" src="../assets/guide/pair_prompt.webp" width="577" height="447" alt="6桁のコードと承認・拒否ボタンが表示されたPCのThumbpadペアリング要求">
+      <p class="alt-route">一覧にPCがない場合は、時計の近くにある隠れているアイコン<strong>（^）</strong>を開き、Thumbpadアイコンを右クリックして<strong>デバイスをペアリング…</strong>を選び、アプリで<strong>QRコードでペアリング</strong>をタップします。</p>
       <div class="loop four">
         <div class="frame">
           <img class="shot" src="../assets/guide/tray_1.webp" width="540" height="380" alt="タスクバー、隠れているアイコンの矢印（^）を強調表示">
@@ -330,7 +334,7 @@
   </div>
 
   <footer>
-    インストール済みの場合は、通知領域（時計の近く）にあるThumbpadアイコンを右クリックすると、ペアリングのやり直しや終了ができます。
+    インストール済みの場合は、通知領域（時計の近く）にあるThumbpadアイコンを右クリックすると、ペアリング済みのスマホの管理や終了ができます。
     · <a href="https://github.com/NCirit/thumbpad-releases/releases/latest">すべてのダウンロード</a>
   </footer>
 </main>

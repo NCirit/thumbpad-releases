@@ -188,6 +188,8 @@
   .get-app .badge img { height: 56px; width: auto; display: block; margin: -8px -10px; }
   .shot { display: block; max-width: 100%; height: auto; margin: 12px 0 4px; border-radius: 8px; }
   .shot.narrow { max-width: 72%; }
+  /* The QR route under the pairing step: secondary to picking the PC. */
+  .alt-route { color: var(--muted); margin: 20px 0 0; }
   /* Two screenshots of one dialog, crossfading: first click, then second. */
   .loop { position: relative; margin: 12px 0 4px; }
   .loop .frame { position: relative; }
@@ -293,7 +295,7 @@
         </div>
       </div>
     </li>
-    <li>Click <strong>Next</strong>, then <strong>Install</strong>. <span>If Windows asks to allow changes, click Yes so Thumbpad starts with Windows. A pairing window with a QR code opens when it's done.</span>
+    <li>Click <strong>Next</strong>, then <strong>Install</strong>. <span>If Windows asks to allow changes, click Yes so Thumbpad starts with Windows. When it's done, Thumbpad keeps running in the system tray near the clock.</span>
       <div class="loop">
         <div class="frame">
           <img class="shot" src="assets/guide/install_1.webp" width="798" height="615" alt="Setup options page with Next highlighted">
@@ -309,7 +311,9 @@
       <img class="shot narrow" src="assets/guide/firewall.webp" width="518" height="519" alt="Windows Security network access prompt with Allow highlighted">
     </li>
     <li>Install the <a href="https://play.google.com/store/apps/details?id=com.thumbpad.app" target="_blank" rel="noopener noreferrer"><strong>Thumbpad</strong> app</a> from Google Play on your Android phone. <span>Keep the phone on the same Wi-Fi network as the PC.</span></li>
-    <li>On your PC, open the hidden icons <strong>(^)</strong> near the clock, right-click the Thumbpad icon and choose <strong>Pair device…</strong>. <span>Then tap</span> <strong>Pair a PC</strong> <span>in the app and scan the QR code. That's the only time you'll need to pair.</span>
+    <li>Open the app on your phone, pick your PC from the list and tap <strong>Pair</strong>. <span>Your PC asks to approve the phone: click</span> <strong>Accept</strong> <span>if it shows the same code as the phone. That's the only time you'll need to pair.</span>
+      <img class="shot narrow" src="assets/guide/pair_prompt.webp" width="577" height="447" alt="Thumbpad pairing request on the PC showing a 6-digit code with Accept and Reject">
+      <p class="alt-route">PC not in the list? Open the hidden icons <strong>(^)</strong> near the clock, right-click the Thumbpad icon, choose <strong>Pair device…</strong> and tap <strong>Pair with QR code instead</strong> in the app.</p>
       <div class="loop four">
         <div class="frame">
           <img class="shot" src="assets/guide/tray_1.webp" width="540" height="380" alt="Taskbar with the hidden icons arrow (^) highlighted">
@@ -351,7 +355,7 @@
   </div>
 
   <footer>
-    Already installed? Right-click the Thumbpad icon in the system tray (near the clock) to pair again or quit.
+    Already installed? Right-click the Thumbpad icon in the system tray (near the clock) to manage paired phones or quit.
     · <a href="https://github.com/NCirit/thumbpad-releases/releases/latest">All downloads</a>
   </footer>
 </main>
