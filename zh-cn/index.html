@@ -136,6 +136,7 @@
   .mobile-dl .secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
   .mobile-dl .plain { background: transparent; color: var(--muted); border: 0; }
   .req { color: var(--muted); font-size: 14px; margin: 14px 0 0; }
+  .ver { color: var(--muted); font-size: 13px; margin: 4px 0 0; min-height: 1.4em; }
   h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 48px 0 16px; }
   /* Letter spacing breaks Arabic joining and looks odd in CJK. */
   :lang(ar) h2, :lang(ja) h2, :lang(zh) h2, :lang(hi) h2 { letter-spacing: 0; }
@@ -262,12 +263,13 @@
   </div>
 
   <h1>Thumbpad</h1>
-  <p class="lede">把 Android 手机变成 Windows 电脑的触控板、键盘，以及媒体和音量遥控器，连上家里的 Wi-Fi 就能用。</p>
+  <p class="lede">把 Android 手机变成 Windows 电脑的触控板、键盘，以及媒体和音量遥控器，连上家里的 Wi-Fi 就能用。还可以把照片和文件从手机发送到电脑。</p>
 
   <a class="download" href="https://github.com/NCirit/thumbpad-releases/releases/latest/download/ThumbpadSetup.exe">
     下载 Windows 版
   </a>
   <p class="req">支持 Windows 10 和 11 · 免费 · 几秒即可装好</p>
+  <p class="ver" id="agent-ver" data-line="版本 {v} · {date}">&nbsp;</p>
 
   <dialog class="mobile-dl" id="mobile-dl">
     <h3>此下载适用于你的电脑</h3>
@@ -366,6 +368,35 @@
   </footer>
 </main>
 <script>
+  // The latest agent release under the Download button, straight from
+  // GitHub, so it is right the moment a release is published. The line
+  // keeps its height while loading and stays blank if GitHub can't be
+  // reached.
+  (function () {
+    var el = document.getElementById('agent-ver');
+    function show(r) {
+      var date = r.date;
+      try {
+        date = new Intl.DateTimeFormat(document.documentElement.lang, { dateStyle: 'medium' })
+          .format(new Date(r.date));
+      } catch (e) {}
+      el.textContent = el.getAttribute('data-line').replace('{v}', r.v).replace('{date}', date);
+    }
+    var cached = null;
+    try { cached = JSON.parse(sessionStorage.getItem('thumbpad-agent-ver')); } catch (e) {}
+    if (cached && cached.v) { show(cached); return; }
+    fetch('https://api.github.com/repos/NCirit/thumbpad-releases/releases/latest',
+          { headers: { Accept: 'application/vnd.github+json' } })
+      .then(function (res) { return res.ok ? res.json() : null; })
+      .then(function (j) {
+        if (!j || !j.tag_name) return;
+        var r = { v: j.tag_name.replace(/^v/, ''), date: j.published_at };
+        try { sessionStorage.setItem('thumbpad-agent-ver', JSON.stringify(r)); } catch (e) {}
+        show(r);
+      })
+      .catch(function () {});
+  })();
+
   // The installer is for Windows; on a phone, say so before downloading and
   // offer to copy the page link for the PC (or download anyway).
   (function () {
